@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Chinomnso</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Chinomnso</a>
+            </div>
+            <nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>Thoughts, tutorials, and insights about web development</p>
+            </div>
+        </section>
+
+        <section class="blog-filters">
+            <div class="container">
+                <div class="filter-container">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search articles...">
+                        <button id="search-button" aria-label="Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                    </div>
+                    <div class="category-filter">
+                        <select id="category-select">
+                            <option value="all">All Categories</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="css">CSS</option>
+                            <option value="html">HTML</option>
+                            <option value="tools">Tools & Workflow</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-posts">
+            <div class="container">
+                <div class="posts-grid">
+                    <article class="post-card" data-category="css">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">June 15, 2023</span>
+                            <h3><a href="article.html">Getting Started with CSS Grid Layout</a></h3>
+                            <p>Learn how to create complex layouts with CSS Grid, the most powerful layout system available in CSS.</p>
+                            <div class="post-tags">
+                                <span>CSS</span>
+                                <span>Layout</span>
+                                <span>Tutorial</span>
+                            </div>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card" data-category="javascript">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">May 22, 2023</span>
+                            <h3><a href="article.html">JavaScript Promises Explained</a></h3>
+                            <p>A comprehensive guide to understanding and working with Promises in JavaScript.</p>
+                            <div class="post-tags">
+                                <span>JavaScript</span>
+                                <span>Async</span>
+                                <span>Tutorial</span>
+                            </div>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card" data-category="html css">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">April 10, 2023</span>
+                            <h3><a href="article.html">Responsive Design Best Practices</a></h3>
+                            <p>Tips and techniques for creating websites that look great on all devices.</p>
+                            <div class="post-tags">
+                                <span>CSS</span>
+                                <span>HTML</span>
+                                <span>Responsive</span>
+                            </div>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card" data-category="tools">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">March 5, 2023</span>
+                            <h3><a href="article.html">Essential VS Code Extensions for Web Developers</a></h3>
+                            <p>Boost your productivity with these must-have VS Code extensions for web development.</p>
+                            <div class="post-tags">
+                                <span>Tools</span>
+                                <span>VS Code</span>
+                                <span>Productivity</span>
+                            </div>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card" data-category="javascript">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">February 18, 2023</span>
+                            <h3><a href="article.html">Understanding the JavaScript Event Loop</a></h3>
+                            <p>A deep dive into how the JavaScript event loop works and why it matters.</p>
+                            <div class="post-tags">
+                                <span>JavaScript</span>
+                                <span>Advanced</span>
+                                <span>Concepts</span>
+                            </div>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card" data-category="css">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">January 30, 2023</span>
+                            <h3><a href="article.html">CSS Variables: A Game Changer for Web Design</a></h3>
+                            <p>Learn how to use CSS custom properties to create more maintainable stylesheets.</p>
+                            <div class="post-tags">
+                                <span>CSS</span>
+                                <span>Variables</span>
+                                <span>Design</span>
+                            </div>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn next">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">Nonso</a>
+                </div>
+                <p>&copy; 2024 Nonso. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

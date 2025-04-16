@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Title | Chinomnso</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Chinomnso</a>
+            </div>
+            <nav>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <article class="article-content">
+            <div class="container">
+                <div class="article-header">
+                    <div class="article-meta">
+                        <span class="article-date">June 15, 2024</span>
+                        <span class="article-category">CSS</span>
+                    </div>
+                    <h1>Getting Started with CSS Grid Layout</h1>
+                    <div class="article-author">
+                        <div class="author-image"></div>
+                        <div class="author-info">
+                            <span class="author-name">Chinomnso</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-featured-image"></div>
+                
+                <div class="article-body">
+                    <p>CSS Grid Layout is a two-dimensional layout system designed for the web. It lets you lay out items in rows and columns, and has many features that make building complex layouts straightforward.</p>
+                    
+                    <h2>Why Use CSS Grid?</h2>
+                    <p>Before CSS Grid, we used floats, positioning, and inline-block to create layouts. These methods were never designed for complex layouts, which made them difficult to use and limited in functionality.</p>
+                    
+                    <p>CSS Grid was specifically designed for layouts, making it much more powerful and intuitive. Here are some benefits:</p>
+                    
+                    <ul>
+                        <li>Two-dimensional control over both rows and columns</li>
+                        <li>Ability to place items precisely</li>
+                        <li>Control of spacing between items</li>
+                        <li>Overlap of items when needed</li>
+                        <li>Named grid areas for easier placement</li>
+                    </ul>
+                    
+                    <h2>Basic Grid Terminology</h2>
+                    
+                    <p>Before diving into code examples, let's understand some basic terminology:</p>
+                    
+                    <ul>
+                        <li><strong>Grid Container</strong>: The element with <code>display: grid</code> applied to it.</li>
+                        <li><strong>Grid Item</strong>: The direct children of the grid container.</li>
+                        <li><strong>Grid Line</strong>: The dividing lines that make up the grid structure.</li>
+                        <li><strong>Grid Cell</strong>: The space between four grid lines.</li>
+                        <li><strong>Grid Track</strong>: The space between two adjacent grid lines (rows or columns).</li>
+                        <li><strong>Grid Area</strong>: The space surrounded by four grid lines.</li>
+                    </ul>
+                    
+                    <h2>Creating Your First Grid</h2>
+                    
+                    <p>Let's start with a simple example:</p>
+                    
+                    <pre><code class="language-css">.container {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 100px 100px;
+  gap: 10px;
+}
+</code></pre>
+                    
+                    <p>This creates a grid with three columns of 200px each and two rows of 100px each, with a 10px gap between all grid items.</p>
+                    
+                    <h2>Using Flexible Units</h2>
+                    
+                    <p>Instead of fixed pixel values, you can use flexible units like <code>fr</code> (fraction):</p>
+                    
+                    <pre><code class="language-css">.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+}
+</code></pre>
+                    
+                    <p>This creates a grid with three columns where the middle column takes up twice as much space as the others.</p>
+                    
+                    <h2>Placing Items on the Grid</h2>
+                    
+                    <p>You can control where items are placed on the grid:</p>
+                    
+                    <pre><code class="language-css">.item {
+  grid-column: 1 / 3; /* Start at line 1, end at line 3 */
+  grid-row: 2 / 3; /* Start at line 2, end at line 3 */
+}
+</code></pre>
+                    
+                    <p>This places the item to span from column line 1 to 3 and from row line 2 to 3.</p>
+                    
+                    <h2>Conclusion</h2>
+                    
+                    <p>CSS Grid is a powerful layout tool that makes complex layouts much easier to create. This article just scratches the surface of what's possible with Grid. In future articles, we'll explore more advanced features like named grid areas, auto-placement, and responsive grid layouts.</p>
+                    
+                    <p>Start experimenting with Grid in your projects, and you'll quickly see how it can simplify your layout code while enabling designs that were difficult or impossible before.</p>
+                </div>
+                
+                <div class="article-tags">
+                    <span>CSS</span>
+                    <span>Layout</span>
+                    <span>Tutorial</span>
+                </div>
+                
+                <div class="article-share">
+                    <span>Share this article:</span>
+                    <div class="share-buttons">
+                        <a href="#" aria-label="Share on Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Share on Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" aria-label="Share on LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <section class="related-posts">
+            <div class="container">
+                <h2>Related Articles</h2>
+                <div class="posts-grid">
+                    <article class="post-card">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">May 5, 2023</span>
+                            <h3><a href="article.html">Flexbox vs. Grid: When to Use Each</a></h3>
+                            <p>A comparison of CSS Flexbox and Grid Layout to help you choose the right tool for the job.</p>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">April 18, 2023</span>
+                            <h3><a href="article.html">Creating Responsive Layouts with CSS Grid</a></h3>
+                            <p>Learn how to build layouts that adapt to different screen sizes using CSS Grid.</p>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image"></div>
+                        <div class="post-content">
+                            <span class="post-date">March 22, 2023</span>
+                            <h3><a href="article.html">CSS Grid for UI Components</a></h3>
+                            <p>How to use CSS Grid to create common UI components like cards, galleries, and forms.</p>
+                            <a href="article.html" class="read-more">Read More</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">Chinomnso</a>
+                </div>
+                <p>&copy; 2023 Chinomnso. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
