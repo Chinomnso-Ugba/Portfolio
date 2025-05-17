@@ -20,8 +20,8 @@ navItems.forEach(item => {
     });
 });
 
-// Dark Mode Toggle
-const themeToggle = document.querySelector('.theme-toggle');
+// Dark Mode Toggle                
+const themeToggle = document.querySelector('.theme-toggle');   
 const body = document.body;
 
 // Check for saved theme preference
@@ -143,8 +143,6 @@ if (contactForm) {
         }
         
         if (isValid) {
-            // In a real application, you would send the form data to a server here
-            alert('Form submitted successfully!');
             contactForm.reset();
         } else {
             alert('Please fill in all required fields correctly.');
